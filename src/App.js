@@ -5,18 +5,25 @@ import './App.css';
 function App() {
 
   let [num, setNum] = useState(0);
-  let [class, setClass] useState ("")
+  let [repeat , setRepeat] = useState(false)
+  
 
       const increase = ()=>{
         setNum(num + 1)
+        setRepeat(!repeat)
+        document.getElementById('step').classList.toggle('animate__bounceIn')
+        document.getElementById('step').classList.toggle('animate__faster')
       }
-
+      
       const decrease = ()=>{
         if (num === 0) {
           return
         }
         else{
           setNum(num - 1)
+          setRepeat(!repeat)
+          document.getElementById('step').classList.toggle('animate__faster')
+          document.getElementById('step').classList.toggle('animate__bounceIn')
         }
       }
 
@@ -25,7 +32,7 @@ function App() {
     <>
 
       <div className="wrap">
-        <div className={`stepper ${{}}`}>
+        <div id='step' className={`stepper  ${(repeat) ? "animate__faster animate__animated animate__bounceIn" : "animate__faster animate__animated animate__bounceIn"}`}>
           <span className="count first active">{num}</span>
           <span className="count second next"></span>
         </div>
