@@ -3,11 +3,7 @@
     --animate-delay: 0s;
 }
 
-html, body {
-	height: 100%;
-}
-
-body {
+.body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,6 +12,8 @@ body {
 	color: #231F20;
 	font-size: 20px;
 	background: #FFF3F5;overflow: hidden;
+	height: 100vh;
+	overflow: visible;
 
 }
 .wrap {
@@ -44,7 +42,7 @@ body {
 	color: #fff;
 	font-size: 64px;
 	position: relative;
-	box-shadow: -1px 57px 80px -17px rgba(255, 73, 87, 0.25);
+	box-shadow: 0px 0px 80px 10px rgba(255, 73, 87, 0.25);
 	overflow: hidden;
 	z-index: 2;
 }
@@ -68,13 +66,14 @@ body {
 
 .arrow-top {
 	position: absolute;
-	top: -60px;
+	top: -120px;
 	left: 0;
 	transform: translateX(-50%);
 	user-select: none;
 	width: 50px;
  cursor: pointer;
  transition: all 0.2s ease-in-out;
+ z-index: 100;
 }
 
 .arrow-bottom {
@@ -86,5 +85,62 @@ body {
 	user-select: none;
 	width: 50px;
  cursor: pointer;
+ z-index: 100;
 }
 
+
+
+/* ////////////////////// */
+
+.toggleButton{
+	position: absolute;
+	z-index: 100;
+	top: 20px;
+	right: 20px;
+}
+
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+  }
+  
+  .label {
+	width: 39px;
+    height: 14px;
+    background-color: #111;
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+
+  }
+  
+  .ball {
+	width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  /*  target the elemenent after the label*/
+  .checkbox:checked + .label .ball{
+	transform: translateX(24px);
+  }
+  
+  .fa-moon {
+	color: pink;
+	height: 0.9rem;
+}
+
+.fa-sun {
+	color: yellow;
+	height: 0.9rem;
+  }
