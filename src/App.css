@@ -65,6 +65,13 @@
 			color: #FF4957;
 		}
 
+		.arrow-bottom:active{
+			filter: drop-shadow(0px 0px 5px  #df1223);
+		}
+		.arrow-top:active{
+			filter: drop-shadow(0px 0px 5px  #df1223);
+		}
+
 .arrow-top {
 	position: absolute;
 	top: -120px;
