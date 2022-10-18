@@ -5,14 +5,14 @@ import './App.css';
 function App() {
 
   let [num, setNum] = useState(0);
-  let [repeat , setRepeat] = useState(false)
   
 
       const increase = ()=>{
         setNum(num + 1)
-        setRepeat(!repeat)
-        document.getElementById('step').classList.toggle('animate__bounceIn')
-        document.getElementById('step').classList.toggle('animate__faster')
+        document.getElementById('step').classList.add("animate__fadeInDown");
+        setTimeout(()=>{
+          document.getElementById('step').classList.remove("animate__fadeInDown")
+        },300)
       }
       
       const decrease = ()=>{
@@ -21,26 +21,27 @@ function App() {
         }
         else{
           setNum(num - 1)
-          setRepeat(!repeat)
-          document.getElementById('step').classList.toggle('animate__faster')
-          document.getElementById('step').classList.toggle('animate__bounceIn')
+          document.getElementById('step').classList.add("animate__fadeInUp");
+        setTimeout(()=>{
+          document.getElementById('step').classList.remove("animate__fadeInUp")
+        },300)
+          
         }
       }
 
   return (
 
-    <>
+    <div className='body'>
 
       <div className="wrap">
-        <div id='step' className={`stepper  ${(repeat) ? "animate__faster animate__animated animate__bounceIn" : "animate__faster animate__animated animate__bounceIn"}`}>
+        <div id='step' className={`stepper animate__animated`}>
           <span className="count first active">{num}</span>
-          <span className="count second next"></span>
         </div>
         <img src="https://alikinvv.github.io/stepper-iteration/build/img/arrow-top.svg" alt="" className="arrow-top active"  onClick={decrease}/>
         <img src="https://alikinvv.github.io/stepper-iteration/build/img/arrow-bottom.svg" onClick={increase} alt="" className="arrow-bottom" />
       </div>
 
-    </>
+    </div>
   );
 }
 

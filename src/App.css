@@ -1,6 +1,6 @@
 :root{
 	--animate-duration: 0.5s;
-    --animate-delay: 0.1s;
+    --animate-delay: 0s;
 }
 
 html, body {
@@ -15,13 +15,19 @@ body {
 	font-weight: 700;
 	color: #231F20;
 	font-size: 20px;
-	background: #FFF3F5;
+	background: #FFF3F5;overflow: hidden;
+
 }
 .wrap {
 	position: relative;
 	margin-left: 65px;
 	margin-top: 65px;
+	
 }
+.wrap::-webkit-scrollbar {
+	display: none;
+  }
+
 
 .stepper {
 	margin-top: -65px;
