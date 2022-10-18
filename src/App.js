@@ -53,7 +53,7 @@ function App() {
       </div>
   </div>
 
-    <div className='body'>
+    <div className={`body ${(lit) ? "light" : "dark" } `}>
 
      
 
