@@ -155,7 +155,9 @@
 
 .dark{
 	background-color: rgb(64 60 83);
+	transition: all 0.5s ease-in-out;
 }  
 .light{
 	background-color: #ffff;
+	transition: all 0.5s ease-in-out;
 }
